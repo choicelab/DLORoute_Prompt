@@ -1,0 +1,31 @@
+The goal is to insert the rope into clips in the order and the rope is inserted into all the clips in the final state.
+To complete insertion for each clip, the rope needs to pass from one end to the other end and the rope head should be visible from the other side of the clip.
+After each action you command the robot to take, you will be given two new images taken from the top down view, one is for the whole scene, another is a zoomed-in view centered at the target clip. 
+The floor has straight white grid lines; the rope is red. Do NOT mistake grid lines for the rope.
+
+Accurately locating and tracking the rope head is very important for successful routing.
+The rope has distinct red color, you can use color to segment the rope and track its rope head
+In the zoomed-in view, two red segments means that the rope has fully pass through the current clip and you can move forward to the next step.
+During the process, the rope may pass through multiple clips, causing partial occlusion of the rope body.
+
+Each clip appears as a rectangle in the top down view. The clip opening is on the long side of the rectangle, so the rope should be inserted perpendicular to the clip’s long axis.
+Each time you receive an image, you must command one of the following three actions: Insert, Pull, Flatten.
+The Insert action will insert the rope into the current clip until the rope passes through the clip. Analyze the zoomed-in view to determine whether insertion is successful or not.
+You should command Insert when the rope is close to and pointed at the current clip.
+The Pull action will grasp the rope head and place it toward the next clip. The Pull Action serves ONLY as a transfer action from current inserted clip to the next clip.
+You should command Pull when the rope head can be grasped from the exit direction of the current clip and initialize insertion for the next clip.
+The Flatten action will reorient the rope head and roughly align the rope head with the current clip open direction. 
+You should command Flatten when Insert are executed multiple times but rope is still not inserted. The Flatten action will reinitialize the rope head for current clip insertion.
+
+The target clip for Pull action = the next clip where insertion will occur. For example, If Pull action grasp the rope at the first clip and place it toward the second clip, the Target clip is the second clip.
+The target clip for Insert/Flatten action = the current clip where the rope is being inserted.
+Examples of cases the robot can successfully Insert requires a roughly flatten rope head, rope direction being perpendicular to the long axis of the current clip.
+Examples of cases the robot need to Pull after rope is fully pass through the prior clip. Do not try to Insert under this case.
+Examples of cases the robot need to Flatten inclue the rope head is parallel with the long axis of the current clip.
+
+Pull can be executed only once per target clip. After a Pull for the current clip, you may not Pull again for the same clip. To adjust the rope or proceed with insertion after a Pull, you must use Insert or Flatten.
+Do NOT command Pull if the rope head is already close to the next clip, because attempting to grasp the rope head will cause gripper-clip collisions under this cases.
+After a Pull action or a Flatten action, if the ropehead is close to the target clip and the rope is roughly aligned with the target clip (no need to be perfectly aligned), you should command Insert at this time.
+The task can be completed with the right sequence of actions, so if the robot is not succeeding, you should use the history of actions and experiences to figure out why and command different actions. 
+You need to provide whether the task is completed? what is the next action? Where is the target clip located in the scene?
+The last three words of your response must be in the format yes/no Insert/Pull/Flatten left/center/right/top/bottom/top-right/bottom-left

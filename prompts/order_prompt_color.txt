@@ -1,0 +1,14 @@
+Please determine the routing order and reason about why you use such an order. Be sure to think about the relative position of different clips and the opening of clips, and when you output the order of the routing, please describe the routing order of clips and for each clip, what is the accurate passing direction (e.g. going from left to right, from top to bottom, from top left to bottom right)?
+Analyze the scene and provide the clip insertion order. For each clip in the order, provide:
+Color — describe what color is the clip the scene (e.g., red, green, blue).
+Exit direction — indicate the direction the rope goes out of the clip after insertion (e.g., left, right, up, down).
+
+Output format requirements:
+Each clip must be on a separate line.
+Follow this format strictly:
+Clip <number>: Color = <color>, Exit direction = <direction>
+
+The last few lines of your response must be in the format:
+Clip 1: Color=red, Exit direction=right
+Clip 2: Color=green, Exit direction=down
+Clip 3: Color=blue, Exit direction=left
