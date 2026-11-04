@@ -93,3 +93,20 @@ Many configs share the same prompt text; they differ in the scene.
 
 The insert counter is not reset between episodes, so "You have prompted insert for `<n>` times" can count inserts of
 the previous episode. `--example` reads where the count starts from the log.
+
+## Citation
+
+This is the citation for this work:
+
+```
+@INPROCEEDINGS{dloroute_icra26,
+  author={Li, Mingen and Yu, Houjian and Huang, Yixuan and Hong, Youngjin and Ye, Hantao and Choi, Changhyun},
+  booktitle={2026 IEEE International Conference on Robotics and Automation (ICRA)}, 
+  title={Hierarchical DLO Routing with Reinforcement Learning and In-Context Vision-Language Models}, 
+  year={2026},
+  volume={},
+  number={},
+  pages={3712-3719},
+  keywords={Routing;Modeling;Cognition;Cognitive systems;Printing;Robots;Planning;Conferences;Simulation;Training},
+  doi={10.1109/ICRA57385.2026.11696258}}
+```
